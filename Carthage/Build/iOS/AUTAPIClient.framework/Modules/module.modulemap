@@ -1,0 +1,6 @@
+framework module AUTAPIClient {
+  umbrella header "AUTAPIClient.h"
+
+  export *
+  module * { export * }
+}

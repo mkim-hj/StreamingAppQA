@@ -1,0 +1,6 @@
+framework module AutomaticAdapter {
+  umbrella header "AutomaticAdapter.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,8 @@
+# Internal
+github "automatic/AUTAPIClient"
+github "automatic/firmware-sdk" "master"
+github "automatic/Parse" "master"
+
+# External
+github "bitstadium/HockeySDK-iOS" "master"
+github "google/google-api-objectivec-client" "master"

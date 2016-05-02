@@ -1,0 +1,6 @@
+framework module AUTBinaryTools {
+  umbrella header "AUTBinaryTools.h"
+
+  export *
+  module * { export * }
+}

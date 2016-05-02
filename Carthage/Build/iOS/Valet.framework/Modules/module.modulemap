@@ -1,0 +1,6 @@
+framework module Valet {
+  umbrella header "Valet.h"
+
+  export *
+  module * { export * }
+}

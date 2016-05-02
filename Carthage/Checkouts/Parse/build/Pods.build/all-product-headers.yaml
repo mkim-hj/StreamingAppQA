@@ -1,0 +1,225 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [
+    {
+      'type': 'directory',
+      'name': "/Users/maruchi/Automatic/automatic-smog/Carthage/Checkouts/Parse/build/Release-iphonesimulator/Pods/Bolts.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "BFCancellationToken.h",
+          'external-contents': "/Users/maruchi/Automatic/automatic-smog/Carthage/Checkouts/Parse/Pods/Bolts/Bolts/Common/BFCancellationToken.h"
+        },
+        {
+          'type': 'file',
+          'name': "BFCancellationTokenRegistration.h",
+          'external-contents': "/Users/maruchi/Automatic/automatic-smog/Carthage/Checkouts/Parse/Pods/Bolts/Bolts/Common/BFCancellationTokenRegistration.h"
+        },
+        {
+          'type': 'file',
+          'name': "BFCancellationTokenSource.h",
+          'external-contents': "/Users/maruchi/Automatic/automatic-smog/Carthage/Checkouts/Parse/Pods/Bolts/Bolts/Common/BFCancellationTokenSource.h"
+        },
+        {
+          'type': 'file',
+          'name': "BFDefines.h",
+          'external-contents': "/Users/maruchi/Automatic/automatic-smog/Carthage/Checkouts/Parse/Pods/Bolts/Bolts/Common/BFDefines.h"
+        },
+        {
+          'type': 'file',
+          'name': "BFExecutor.h",
+          'external-contents': "/Users/maruchi/Automatic/automatic-smog/Carthage/Checkouts/Parse/Pods/Bolts/Bolts/Common/BFExecutor.h"
+        },
+        {
+          'type': 'file',
+          'name': "BFTask.h",
+          'external-contents': "/Users/maruchi/Automatic/automatic-smog/Carthage/Checkouts/Parse/Pods/Bolts/Bolts/Common/BFTask.h"
+        },
+        {
+          'type': 'file',
+          'name': "BFTaskCompletionSource.h",
+          'external-contents': "/Users/maruchi/Automatic/automatic-smog/Carthage/Checkouts/Parse/Pods/Bolts/Bolts/Common/BFTaskCompletionSource.h"
+        },
+        {
+          'type': 'file',
+          'name': "Bolts-Swift.h",
+          'external-contents': "/Users/maruchi/Automatic/automatic-smog/Carthage/Checkouts/Parse/build/Release-iphonesimulator/Pods/Bolts.framework/Headers/Bolts-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "Bolts.h",
+          'external-contents': "/Users/maruchi/Automatic/automatic-smog/Carthage/Checkouts/Parse/Pods/Bolts/Bolts/Common/Bolts.h"
+        },
+        {
+          'type': 'file',
+          'name': "BoltsVersion.h",
+          'external-contents': "/Users/maruchi/Automatic/automatic-smog/Carthage/Checkouts/Parse/Pods/Bolts/Bolts/Common/BoltsVersion.h"
+        },
+        {
+          'type': 'file',
+          'name': "Pods-Bolts-umbrella.h",
+          'external-contents': "/Users/maruchi/Automatic/automatic-smog/Carthage/Checkouts/Parse/Pods/Target Support Files/Pods-Bolts/Pods-Bolts-umbrella.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/maruchi/Automatic/automatic-smog/Carthage/Checkouts/Parse/build/Release-iphonesimulator/Pods/Bolts.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/maruchi/Automatic/automatic-smog/Carthage/Checkouts/Parse/build/Pods.build/Release-iphonesimulator/Pods-Bolts.build/module.modulemap"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/maruchi/Automatic/automatic-smog/Carthage/Checkouts/Parse/build/Release-iphonesimulator/Pods/Parse.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "PFACL.h",
+          'external-contents': "/Users/maruchi/Automatic/automatic-smog/Carthage/Checkouts/Parse/Pods/Parse/Parse/PFACL.h"
+        },
+        {
+          'type': 'file',
+          'name': "PFAnalytics.h",
+          'external-contents': "/Users/maruchi/Automatic/automatic-smog/Carthage/Checkouts/Parse/Pods/Parse/Parse/PFAnalytics.h"
+        },
+        {
+          'type': 'file',
+          'name': "PFAnonymousUtils.h",
+          'external-contents': "/Users/maruchi/Automatic/automatic-smog/Carthage/Checkouts/Parse/Pods/Parse/Parse/PFAnonymousUtils.h"
+        },
+        {
+          'type': 'file',
+          'name': "PFCloud.h",
+          'external-contents': "/Users/maruchi/Automatic/automatic-smog/Carthage/Checkouts/Parse/Pods/Parse/Parse/PFCloud.h"
+        },
+        {
+          'type': 'file',
+          'name': "PFConfig.h",
+          'external-contents': "/Users/maruchi/Automatic/automatic-smog/Carthage/Checkouts/Parse/Pods/Parse/Parse/PFConfig.h"
+        },
+        {
+          'type': 'file',
+          'name': "PFConstants.h",
+          'external-contents': "/Users/maruchi/Automatic/automatic-smog/Carthage/Checkouts/Parse/Pods/Parse/Parse/PFConstants.h"
+        },
+        {
+          'type': 'file',
+          'name': "PFFile.h",
+          'external-contents': "/Users/maruchi/Automatic/automatic-smog/Carthage/Checkouts/Parse/Pods/Parse/Parse/PFFile.h"
+        },
+        {
+          'type': 'file',
+          'name': "PFGeoPoint.h",
+          'external-contents': "/Users/maruchi/Automatic/automatic-smog/Carthage/Checkouts/Parse/Pods/Parse/Parse/PFGeoPoint.h"
+        },
+        {
+          'type': 'file',
+          'name': "PFInstallation.h",
+          'external-contents': "/Users/maruchi/Automatic/automatic-smog/Carthage/Checkouts/Parse/Pods/Parse/Parse/PFInstallation.h"
+        },
+        {
+          'type': 'file',
+          'name': "PFNetworkActivityIndicatorManager.h",
+          'external-contents': "/Users/maruchi/Automatic/automatic-smog/Carthage/Checkouts/Parse/Pods/Parse/Parse/PFNetworkActivityIndicatorManager.h"
+        },
+        {
+          'type': 'file',
+          'name': "PFNullability.h",
+          'external-contents': "/Users/maruchi/Automatic/automatic-smog/Carthage/Checkouts/Parse/Pods/Parse/Parse/PFNullability.h"
+        },
+        {
+          'type': 'file',
+          'name': "PFObject+Subclass.h",
+          'external-contents': "/Users/maruchi/Automatic/automatic-smog/Carthage/Checkouts/Parse/Pods/Parse/Parse/PFObject+Subclass.h"
+        },
+        {
+          'type': 'file',
+          'name': "PFObject.h",
+          'external-contents': "/Users/maruchi/Automatic/automatic-smog/Carthage/Checkouts/Parse/Pods/Parse/Parse/PFObject.h"
+        },
+        {
+          'type': 'file',
+          'name': "PFProduct.h",
+          'external-contents': "/Users/maruchi/Automatic/automatic-smog/Carthage/Checkouts/Parse/Pods/Parse/Parse/PFProduct.h"
+        },
+        {
+          'type': 'file',
+          'name': "PFPurchase.h",
+          'external-contents': "/Users/maruchi/Automatic/automatic-smog/Carthage/Checkouts/Parse/Pods/Parse/Parse/PFPurchase.h"
+        },
+        {
+          'type': 'file',
+          'name': "PFPush.h",
+          'external-contents': "/Users/maruchi/Automatic/automatic-smog/Carthage/Checkouts/Parse/Pods/Parse/Parse/PFPush.h"
+        },
+        {
+          'type': 'file',
+          'name': "PFQuery.h",
+          'external-contents': "/Users/maruchi/Automatic/automatic-smog/Carthage/Checkouts/Parse/Pods/Parse/Parse/PFQuery.h"
+        },
+        {
+          'type': 'file',
+          'name': "PFRelation.h",
+          'external-contents': "/Users/maruchi/Automatic/automatic-smog/Carthage/Checkouts/Parse/Pods/Parse/Parse/PFRelation.h"
+        },
+        {
+          'type': 'file',
+          'name': "PFRole.h",
+          'external-contents': "/Users/maruchi/Automatic/automatic-smog/Carthage/Checkouts/Parse/Pods/Parse/Parse/PFRole.h"
+        },
+        {
+          'type': 'file',
+          'name': "PFSession.h",
+          'external-contents': "/Users/maruchi/Automatic/automatic-smog/Carthage/Checkouts/Parse/Pods/Parse/Parse/PFSession.h"
+        },
+        {
+          'type': 'file',
+          'name': "PFSubclassing.h",
+          'external-contents': "/Users/maruchi/Automatic/automatic-smog/Carthage/Checkouts/Parse/Pods/Parse/Parse/PFSubclassing.h"
+        },
+        {
+          'type': 'file',
+          'name': "PFUser.h",
+          'external-contents': "/Users/maruchi/Automatic/automatic-smog/Carthage/Checkouts/Parse/Pods/Parse/Parse/PFUser.h"
+        },
+        {
+          'type': 'file',
+          'name': "PFUserAuthenticationDelegate.h",
+          'external-contents': "/Users/maruchi/Automatic/automatic-smog/Carthage/Checkouts/Parse/Pods/Parse/Parse/PFUserAuthenticationDelegate.h"
+        },
+        {
+          'type': 'file',
+          'name': "Parse-Swift.h",
+          'external-contents': "/Users/maruchi/Automatic/automatic-smog/Carthage/Checkouts/Parse/build/Release-iphonesimulator/Pods/Parse.framework/Headers/Parse-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "Parse.h",
+          'external-contents': "/Users/maruchi/Automatic/automatic-smog/Carthage/Checkouts/Parse/Pods/Parse/Parse/Parse.h"
+        },
+        {
+          'type': 'file',
+          'name': "Pods-Parse-umbrella.h",
+          'external-contents': "/Users/maruchi/Automatic/automatic-smog/Carthage/Checkouts/Parse/Pods/Target Support Files/Pods-Parse/Pods-Parse-umbrella.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/maruchi/Automatic/automatic-smog/Carthage/Checkouts/Parse/build/Release-iphonesimulator/Pods/Parse.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/maruchi/Automatic/automatic-smog/Carthage/Checkouts/Parse/build/Pods.build/Release-iphonesimulator/Pods-Parse.build/module.modulemap"
+        }
+      ]
+    }
+  ]
+}

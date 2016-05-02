@@ -1,0 +1,846 @@
+[1mdiff --git a/Cartfile b/Cartfile[m
+[1mindex 07ee945..f13c423 100644[m
+[1m--- a/Cartfile[m
+[1m+++ b/Cartfile[m
+[36m@@ -5,3 +5,4 @@[m [mgithub "automatic/Parse" "master"[m
+ [m
+ # External[m
+ github "bitstadium/HockeySDK-iOS" "master"[m
+[32m+[m[32mgithub "google/google-api-objectivec-client" "master"[m
+[1mdiff --git a/Oregon/Base.lproj/Main.storyboard b/Oregon/Base.lproj/Main.storyboard[m
+[1mindex 59d6c3e..b5f1646 100644[m
+[1m--- a/Oregon/Base.lproj/Main.storyboard[m
+[1m+++ b/Oregon/Base.lproj/Main.storyboard[m
+[36m@@ -27,7 +27,6 @@[m
+             <string>Locator-Bold</string>[m
+             <string>Locator-Bold</string>[m
+             <string>Locator-Bold</string>[m
+[31m-            <string>Locator-Bold</string>[m
+         </mutableArray>[m
+         <mutableArray key="locator-light.ttf">[m
+             <string>Locator-Light</string>[m
+[36m@@ -63,8 +62,6 @@[m
+             <string>Locator-Regular</string>[m
+             <string>Locator-Regular</string>[m
+             <string>Locator-Regular</string>[m
+[31m-            <string>Locator-Regular</string>[m
+[31m-            <string>Locator-Regular</string>[m
+         </mutableArray>[m
+         <mutableArray key="panton-extrabold.ttf">[m
+             <string>Panton-ExtraBold</string>[m
+[36m@@ -73,7 +70,6 @@[m
+             <string>Panton-ExtraBold</string>[m
+             <string>Panton-ExtraBold</string>[m
+             <string>Panton-ExtraBold</string>[m
+[31m-            <string>Panton-ExtraBold</string>[m
+         </mutableArray>[m
+     </customFonts>[m
+     <scenes>[m
+[36m@@ -85,9 +81,6 @@[m
+                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>[m
+                         <autoresizingMask key="autoresizingMask"/>[m
+                     </navigationBar>[m
+[31m-                    <connections>[m
+[31m-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="AT9-7Y-2fd"/>[m
+[31m-                    </connections>[m
+                 </navigationController>[m
+                 <placeholder placeholderIdentifier="IBFirstResponder" id="utr-W4-cNw" userLabel="First Responder" sceneMemberID="firstResponder"/>[m
+             </objects>[m
+[36m@@ -192,246 +185,6 @@[m
+             </objects>[m
+             <point key="canvasLocation" x="-104" y="-203"/>[m
+         </scene>[m
+[31m-        <!--Login-->[m
+[31m-        <scene sceneID="tne-QT-ifu">[m
+[31m-            <objects>[m
+[31m-                <viewController storyboardIdentifier="LoginViewController" title="Login" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">[m
+[31m-                    <layoutGuides>[m
+[31m-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>[m
+[31m-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>[m
+[31m-                    </layoutGuides>[m
+[31m-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">[m
+[31m-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>[m
+[31m-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>[m
+[31m-                        <subviews>[m
+[31m-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4eJ-fl-C6v">[m
+[31m-                                <rect key="frame" x="36" y="370" width="303" height="72"/>[m
+[31m-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>[m
+[31m-                                <constraints>[m
+[31m-                                    <constraint firstAttribute="height" constant="72" id="xJd-5m-Th7"/>[m
+[31m-                                </constraints>[m
+[31m-                                <fontDescription key="fontDescription" name="Locator-Regular" family="Locator" pointSize="18"/>[m
+[31m-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>[m
+[31m-                                <connections>[m
+[31m-                                    <action selector="passwordReturnKeyWasHit:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="Ga9-w9-6of"/>[m
+[31m-                                </connections>[m
+[31m-                            </textField>[m
+[31m-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BPy-BH-XXn">[m
+[31m-                                <rect key="frame" x="71" y="213" width="234" height="42"/>[m
+[31m-                                <constraints>[m
+[31m-                                    <constraint firstAttribute="height" constant="105" id="SnN-hw-fE1"/>[m
+[31m-                                </constraints>[m
+[31m-                                <attributedString key="attributedText">[m
+[31m-                                    <fragment content="A smarter, simpler way to get your smog check done through your phone.">[m
+[31m-                                        <attributes>[m
+[31m-                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>[m
+[31m-                                            <font key="NSFont" size="14" name="Locator-Light"/>[m
+[31m-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.25"/>[m
+[31m-                                        </attributes>[m
+[31m-                                    </fragment>[m
+[31m-                                </attributedString>[m
+[31m-                                <nil key="highlightedColor"/>[m
+[31m-                                <variation key="default">[m
+[31m-                                    <mask key="constraints">[m
+[31m-                                        <exclude reference="SnN-hw-fE1"/>[m
+[31m-                                    </mask>[m
+[31m-                                </variation>[m
+[31m-                            </label>[m
+[31m-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AutomaticLogo-large.png" translatesAutoresizingMaskIntoConstraints="NO" id="7zr-Uy-1Zn">[m
+[31m-                                <rect key="frame" x="149" y="55" width="78" height="88"/>[m
+[31m-                                <constraints>[m
+[31m-                                    <constraint firstAttribute="height" constant="88" id="Kxt-JN-VSE"/>[m
+[31m-                                    <constraint firstAttribute="width" constant="78" id="bDi-uk-iTy"/>[m
+[31m-                                </constraints>[m
+[31m-                            </imageView>[m
+[31m-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w2k-NK-g1B">[m
+[31m-                                <rect key="frame" x="36" y="298" width="303" height="72"/>[m
+[31m-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>[m
+[31m-                                <constraints>[m
+[31m-                                    <constraint firstAttribute="height" constant="72" id="MQM-VF-FVR"/>[m
+[31m-                                </constraints>[m
+[31m-                                <fontDescription key="fontDescription" name="Locator-Regular" family="Locator" pointSize="18"/>[m
+[31m-                                <textInputTraits key="textInputTraits"/>[m
+[31m-                                <userDefinedRuntimeAttributes>[m
+[31m-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">[m
+[31m-                                        <integer key="value" value="20"/>[m
+[31m-                                    </userDefinedRuntimeAttribute>[m
+[31m-                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">[m
+[31m-                                        <color key="value" red="1" green="0.54117647059999996" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>[m
+[31m-                                    </userDefinedRuntimeAttribute>[m
+[31m-                                </userDefinedRuntimeAttributes>[m
+[31m-                                <connections>[m
+[31m-                                    <action selector="usernameReturnKeyWasHit:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="8RF-PU-P4H"/>[m
+[31m-                                </connections>[m
+[31m-                            </textField>[m
+[31m-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sIm-J8-cP7">[m
+[31m-                                <rect key="frame" x="36" y="567" width="303" height="60"/>[m
+[31m-                                <color key="backgroundColor" red="0.92941176470588238" green="0.55294117647058827" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>[m
+[31m-                                <constraints>[m
+[31m-                                    <constraint firstAttribute="height" constant="60" id="iGW-wk-Kv1"/>[m
+[31m-                                    <constraint firstAttribute="width" constant="270" id="tcj-W7-ToD"/>[m
+[31m-                                </constraints>[m
+[31m-                                <fontDescription key="fontDescription" name="Locator-Bold" family="Locator" pointSize="20"/>[m
+[31m-                                <state key="normal" title="LOGIN">[m
+[31m-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>[m
+[31m-                                </state>[m
+[31m-                                <variation key="default">[m
+[31m-                                    <mask key="constraints">[m
+[31m-                                        <exclude reference="tcj-W7-ToD"/>[m
+[31m-                                    </mask>[m
+[31m-                                </variation>[m
+[31m-                                <connections>[m
+[31m-                                    <action selector="loginButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xiw-ng-af8"/>[m
+[31m-                                </connections>[m
+[31m-                            </button>[m
+[31m-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U9S-im-qxi">[m
+[31m-                                <rect key="frame" x="42" y="148" width="290" height="85"/>[m
+[31m-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>[m
+[31m-                                <constraints>[m
+[31m-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="15" id="yDA-YN-qzq"/>[m
+[31m-                                </constraints>[m
+[31m-                                <variation key="default">[m
+[31m-                                    <mask key="constraints">[m
+[31m-                                        <exclude reference="yDA-YN-qzq"/>[m
+[31m-                                    </mask>[m
+[31m-                                </variation>[m
+[31m-                            </view>[m
+[31m-                            <activityIndicatorView opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="FbJ-T4-d95">[m
+[31m-                                <rect key="frame" x="169" y="579" width="37" height="37"/>[m
+[31m-                                <color key="color" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>[m
+[31m-                            </activityIndicatorView>[m
+[31m-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nft-a1-ZIa">[m
+[31m-                                <rect key="frame" x="42" y="213" width="290" height="85"/>[m
+[31m-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>[m
+[31m-                                <constraints>[m
+[31m-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="15" id="laY-4X-2PA"/>[m
+[31m-                                </constraints>[m
+[31m-                                <variation key="default">[m
+[31m-                                    <mask key="constraints">[m
+[31m-                                        <exclude reference="laY-4X-2PA"/>[m
+[31m-                                    </mask>[m
+[31m-                                </variation>[m
+[31m-                            </view>[m
+[31m-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EDj-ay-fuy">[m
+[31m-                                <rect key="frame" x="71" y="452" width="234" height="34"/>[m
+[31m-                                <attributedString key="attributedText">[m
+[31m-                                    <fragment>[m
+[31m-                                        <string key="content">By logging in, you agree to share your[m
+[31m-smog test results with Oregon.</string>[m
+[31m-                                        <attributes>[m
+[31m-                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>[m
+[31m-                                            <font key="NSFont" size="14" name="Locator-Light"/>[m
+[31m-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>[m
+[31m-                                        </attributes>[m
+[31m-                                    </fragment>[m
+[31m-                                </attributedString>[m
+[31m-                                <nil key="highlightedColor"/>[m
+[31m-                            </label>[m
+[31m-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AutoSmog" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CNd-XQ-vn6">[m
+[31m-                                <rect key="frame" x="116" y="148" width="142" height="38"/>[m
+[31m-                                <fontDescription key="fontDescription" name="Panton-ExtraBold" family="Panton" pointSize="30"/>[m
+[31m-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>[m
+[31m-                                <nil key="highlightedColor"/>[m
+[31m-                                <size key="shadowOffset" width="0.0" height="0.0"/>[m
+[31m-                            </label>[m
+[31m-                        </subviews>[m
+[31m-                        <color key="backgroundColor" red="0.99215686274509807" green="0.80000000000000004" blue="0.30588235294117649" alpha="1" colorSpace="calibratedRGB"/>[m
+[31m-                        <constraints>[m
+[31m-                            <constraint firstItem="sIm-J8-cP7" firstAttribute="trailing" secondItem="EDj-ay-fuy" secondAttribute="trailing" id="0gn-uA-28W"/>[m
+[31m-                            <constraint firstItem="w2k-NK-g1B" firstAttribute="top" secondItem="FbJ-T4-d95" secondAttribute="bottom" constant="20" id="1T5-2w-Ipb"/>[m
+[31m-                            <constraint firstItem="BPy-BH-XXn" firstAttribute="top" secondItem="U9S-im-qxi" secondAttribute="bottom" id="22J-vF-nk6"/>[m
+[31m-                            <constraint firstItem="BPy-BH-XXn" firstAttribute="leading" secondItem="EDj-ay-fuy" secondAttribute="leading" id="3B2-5e-3eF"/>[m
+[31m-                            <constraint firstItem="4eJ-fl-C6v" firstAttribute="top" secondItem="w2k-NK-g1B" secondAttribute="bottom" id="56G-jh-NPc"/>[m
+[31m-                            <constraint firstItem="w2k-NK-g1B" firstAttribute="top" secondItem="BPy-BH-XXn" secondAttribute="bottom" id="5D9-YB-P44"/>[m
+[31m-                            <constraint firstItem="w2k-NK-g1B" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5DM-zq-t07"/>[m
+[31m-                            <constraint firstItem="4eJ-fl-C6v" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="5d7-o0-pVs"/>[m
+[31m-                            <constraint firstItem="4eJ-fl-C6v" firstAttribute="top" secondItem="w2k-NK-g1B" secondAttribute="bottom" constant="-30" id="7Dh-Fp-epg"/>[m
+[31m-                            <constraint firstAttribute="trailingMargin" secondItem="w2k-NK-g1B" secondAttribute="trailing" constant="20" id="7Jd-gS-nIF"/>[m
+[31m-                            <constraint firstAttribute="trailingMargin" secondItem="sIm-J8-cP7" secondAttribute="trailing" constant="20" id="8B5-RR-4Ts"/>[m
+[31m-                            <constraint firstAttribute="trailingMargin" secondItem="nft-a1-ZIa" secondAttribute="trailing" constant="27" id="9V6-kd-wSd"/>[m
+[31m-                            <constraint firstItem="EDj-ay-fuy" firstAttribute="top" secondItem="4eJ-fl-C6v" secondAttribute="bottom" constant="10" id="9f5-zV-d2f"/>[m
+[31m-                            <constraint firstItem="BPy-BH-XXn" firstAttribute="top" secondItem="U9S-im-qxi" secondAttribute="bottom" constant="-20" id="AE6-9c-rL9"/>[m
+[31m-                            <constraint firstItem="sIm-J8-cP7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CDJ-yZ-lji"/>[m
+[31m-                            <constraint firstItem="4eJ-fl-C6v" firstAttribute="top" secondItem="w2k-NK-g1B" secondAttribute="top" id="CdU-4n-l1E"/>[m
+[31m-                            <constraint firstItem="w2k-NK-g1B" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="E1z-Kv-oEU"/>[m
+[31m-                            <constraint firstItem="CNd-XQ-vn6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FNB-sA-SJw"/>[m
+[31m-                            <constraint firstAttribute="trailingMargin" secondItem="U9S-im-qxi" secondAttribute="trailing" constant="27" id="GBn-CZ-dgi"/>[m
+[31m-                            <constraint firstItem="U9S-im-qxi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="26" id="HjO-fr-Vyu"/>[m
+[31m-                            <constraint firstItem="w2k-NK-g1B" firstAttribute="top" relation="greaterThanOrEqual" secondItem="BPy-BH-XXn" secondAttribute="bottom" id="KIs-ix-Pxd"/>[m
+[31m-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" relation="greaterThanOrEqual" secondItem="sIm-J8-cP7" secondAttribute="bottom" constant="5" id="Msz-f6-5eX"/>[m
+[31m-                            <constraint firstItem="7zr-Uy-1Zn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Qf2-nj-8DR"/>[m
+[31m-                            <constraint firstItem="BPy-BH-XXn" firstAttribute="trailing" secondItem="EDj-ay-fuy" secondAttribute="trailing" id="RGl-3v-hFz"/>[m
+[31m-                            <constraint firstItem="FbJ-T4-d95" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TIc-uB-iey"/>[m
+[31m-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="sIm-J8-cP7" secondAttribute="bottom" constant="40" id="TNC-W5-Eqa"/>[m
+[31m-                            <constraint firstAttribute="trailingMargin" secondItem="4eJ-fl-C6v" secondAttribute="trailing" constant="20" id="Tku-vK-fZc"/>[m
+[31m-                            <constraint firstItem="w2k-NK-g1B" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="VU7-Vn-UUw"/>[m
+[31m-                            <constraint firstItem="nft-a1-ZIa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="26" id="WHo-vA-7yo"/>[m
+[31m-                            <constraint firstItem="sIm-J8-cP7" firstAttribute="leading" secondItem="EDj-ay-fuy" secondAttribute="leading" id="XLd-MS-snR"/>[m
+[31m-                            <constraint firstItem="CNd-XQ-vn6" firstAttribute="top" secondItem="7zr-Uy-1Zn" secondAttribute="bottom" constant="5" id="XSO-jO-bwk"/>[m
+[31m-                            <constraint firstItem="BPy-BH-XXn" firstAttribute="top" relation="greaterThanOrEqual" secondItem="CNd-XQ-vn6" secondAttribute="bottom" constant="20" id="Y5t-7s-cd1"/>[m
+[31m-                            <constraint firstItem="U9S-im-qxi" firstAttribute="top" secondItem="CNd-XQ-vn6" secondAttribute="top" id="aCK-d1-y9v"/>[m
+[31m-                            <constraint firstItem="FbJ-T4-d95" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-65" id="cyq-p4-KZx"/>[m
+[31m-                            <constraint firstItem="4eJ-fl-C6v" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eVK-fL-sKO"/>[m
+[31m-                            <constraint firstItem="FbJ-T4-d95" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="fDx-Wy-AhV"/>[m
+[31m-                            <constraint firstItem="EDj-ay-fuy" firstAttribute="top" secondItem="4eJ-fl-C6v" secondAttribute="bottom" constant="10" id="ggS-Iv-fuq"/>[m
+[31m-                            <constraint firstItem="sIm-J8-cP7" firstAttribute="top" relation="greaterThanOrEqual" secondItem="EDj-ay-fuy" secondAttribute="bottom" constant="50" id="h2w-k0-fhb"/>[m
+[31m-                            <constraint firstItem="sIm-J8-cP7" firstAttribute="top" relation="lessThanOrEqual" secondItem="EDj-ay-fuy" secondAttribute="bottom" constant="40" id="i2c-mi-YBb"/>[m
+[31m-                            <constraint firstItem="sIm-J8-cP7" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="iDi-ki-kZT"/>[m
+[31m-                            <constraint firstItem="sIm-J8-cP7" firstAttribute="centerX" secondItem="7zr-Uy-1Zn" secondAttribute="centerX" id="jrz-5k-FIV"/>[m
+[31m-                            <constraint firstItem="FbJ-T4-d95" firstAttribute="centerY" secondItem="sIm-J8-cP7" secondAttribute="centerY" id="lKO-ej-CIU"/>[m
+[31m-                            <constraint firstItem="7zr-Uy-1Zn" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="35" id="p5x-ef-0aR"/>[m
+[31m-                            <constraint firstItem="w2k-NK-g1B" firstAttribute="top" relation="greaterThanOrEqual" secondItem="BPy-BH-XXn" secondAttribute="bottom" constant="20" id="qHD-r6-sn4"/>[m
+[31m-                            <constraint firstItem="w2k-NK-g1B" firstAttribute="top" secondItem="nft-a1-ZIa" secondAttribute="bottom" id="qks-Cw-wWq"/>[m
+[31m-                            <constraint firstItem="sIm-J8-cP7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="rYj-AQ-AdA"/>[m
+[31m-                            <constraint firstItem="BPy-BH-XXn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tW6-bK-vzW"/>[m
+[31m-                            <constraint firstItem="U9S-im-qxi" firstAttribute="height" secondItem="nft-a1-ZIa" secondAttribute="height" id="tWZ-9i-WXh"/>[m
+[31m-                            <constraint firstItem="nft-a1-ZIa" firstAttribute="top" secondItem="BPy-BH-XXn" secondAttribute="top" id="u8G-ot-ZOS"/>[m
+[31m-                            <constraint firstItem="BPy-BH-XXn" firstAttribute="centerX" secondItem="FbJ-T4-d95" secondAttribute="centerX" id="vYG-Bb-Q73"/>[m
+[31m-                            <constraint firstItem="sIm-J8-cP7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xOV-u4-6Vy"/>[m
+[31m-                        </constraints>[m
+[31m-                        <variation key="default">[m
+[31m-                            <mask key="constraints">[m
+[31m-                                <exclude reference="22J-vF-nk6"/>[m
+[31m-                                <exclude reference="Y5t-7s-cd1"/>[m
+[31m-                                <exclude reference="vYG-Bb-Q73"/>[m
+[31m-                                <exclude reference="1T5-2w-Ipb"/>[m
+[31m-                                <exclude reference="5D9-YB-P44"/>[m
+[31m-                                <exclude reference="KIs-ix-Pxd"/>[m
+[31m-                                <exclude reference="qHD-r6-sn4"/>[m
+[31m-                                <exclude reference="7Dh-Fp-epg"/>[m
+[31m-                                <exclude reference="CdU-4n-l1E"/>[m
+[31m-                                <exclude reference="9f5-zV-d2f"/>[m
+[31m-                                <exclude reference="0gn-uA-28W"/>[m
+[31m-                                <exclude reference="CDJ-yZ-lji"/>[m
+[31m-                                <exclude reference="XLd-MS-snR"/>[m
+[31m-                                <exclude reference="h2w-k0-fhb"/>[m
+[31m-                                <exclude reference="i2c-mi-YBb"/>[m
+[31m-                                <exclude reference="iDi-ki-kZT"/>[m
+[31m-                                <exclude reference="jrz-5k-FIV"/>[m
+[31m-                                <exclude reference="xOV-u4-6Vy"/>[m
+[31m-                                <exclude reference="cyq-p4-KZx"/>[m
+[31m-                                <exclude reference="fDx-Wy-AhV"/>[m
+[31m-                                <exclude reference="Msz-f6-5eX"/>[m
+[31m-                            </mask>[m
+[31m-                        </variation>[m
+[31m-                    </view>[m
+[31m-                    <navigationItem key="navigationItem" id="MD9-og-UmE"/>[m
+[31m-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>[m
+[31m-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>[m
+[31m-                    <connections>[m
+[31m-                        <outlet property="activityIndicatorView" destination="FbJ-T4-d95" id="tbX-3q-lLM"/>[m
+[31m-                        <outlet property="loginButton" destination="sIm-J8-cP7" id="XcT-mc-MXp"/>[m
+[31m-                        <outlet property="loginLabel" destination="EDj-ay-fuy" id="lVK-Au-wV0"/>[m
+[31m-                        <outlet property="passwordText" destination="4eJ-fl-C6v" id="MfS-Rz-OL1"/>[m
+[31m-                        <outlet property="sloganLabel" destination="BPy-BH-XXn" id="yG0-dQ-fiI"/>[m
+[31m-                        <outlet property="usernameText" destination="w2k-NK-g1B" id="pXM-Zu-hAM"/>[m
+[31m-                        <segue destination="ixB-UU-DRG" kind="show" identifier="toDashboard" id="Wpg-bI-UIr"/>[m
+[31m-                    </connections>[m
+[31m-                </viewController>[m
+[31m-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>[m
+[31m-            </objects>[m
+[31m-            <point key="canvasLocation" x="80.5" y="515.5"/>[m
+[31m-        </scene>[m
+         <!--Welcome View Controller-->[m
+         <scene sceneID="bNv-zE-Jf7">[m
+             <objects>[m
+[36m@@ -581,11 +334,11 @@[m [msmog test results with Oregon.</string>[m
+                         <viewControllerLayoutGuide type="bottom" id="eer-PS-Csr"/>[m
+                     </layoutGuides>[m
+                     <view key="view" contentMode="scaleToFill" id="djH-a1-hBz">[m
+[31m-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>[m
+[32m+[m[32m                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>[m
+                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>[m
+                         <subviews>[m
+                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KGB-JR-V6I">[m
+[31m-                                <rect key="frame" x="-14" y="367" width="394" height="300"/>[m
+[32m+[m[32m                                <rect key="frame" x="-10" y="367" width="615" height="233"/>[m
+                                 <constraints>[m
+                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="295" id="1Lj-TE-15c"/>[m
+                                 </constraints>[m
+[36m@@ -599,7 +352,7 @@[m [msmog test results with Oregon.</string>[m
+                                 </connections>[m
+                             </containerView>[m
+                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RgQ-fe-bjK">[m
+[31m-                                <rect key="frame" x="271" y="179" width="88" height="31"/>[m
+[32m+[m[32m                                <rect key="frame" x="492" y="179" width="88" height="31"/>[m
+                                 <color key="backgroundColor" red="0.46666666670000001" green="0.50196078430000002" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>[m
+                                 <constraints>[m
+                                     <constraint firstAttribute="height" constant="31" id="3Xc-XY-Xdu"/>[m
+[36m@@ -614,7 +367,7 @@[m [msmog test results with Oregon.</string>[m
+                                 </connections>[m
+                             </button>[m
+                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aea-3M-trU">[m
+[31m-                                <rect key="frame" x="-9" y="0.0" width="384" height="99"/>[m
+[32m+[m[32m                                <rect key="frame" x="-5" y="0.0" width="605" height="99"/>[m
+                                 <subviews>[m
+                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AutomaticLogo-large.png" translatesAutoresizingMaskIntoConstraints="NO" id="BNu-WY-nwB">[m
+                                         <rect key="frame" x="16" y="33" width="54" height="49"/>[m
+[36m@@ -624,13 +377,13 @@[m [msmog test results with Oregon.</string>[m
+                                         </constraints>[m
+                                     </imageView>[m
+                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="user@automatic.com" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GSJ-7S-iBE">[m
+[31m-                                        <rect key="frame" x="265" y="35" width="111" height="15"/>[m
+[32m+[m[32m                                        <rect key="frame" x="486" y="35" width="111" height="14.5"/>[m
+                                         <fontDescription key="fontDescription" name="Locator-Regular" family="Locator" pointSize="12"/>[m
+                                         <color key="textColor" red="0.97647058819999999" green="0.97254901959999995" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>[m
+                                         <nil key="highlightedColor"/>[m
+                                     </label>[m
+                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="30p-us-Ze5">[m
+[31m-                                        <rect key="frame" x="321" y="53" width="55" height="25"/>[m
+[32m+[m[32m                                        <rect key="frame" x="542" y="52" width="55" height="25"/>[m
+                                         <color key="backgroundColor" red="0.99215686274509807" green="0.84313725490196079" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>[m
+                                         <constraints>[m
+                                             <constraint firstAttribute="height" constant="25" id="Tu8-um-npd"/>[m
+[36m@@ -644,23 +397,8 @@[m [msmog test results with Oregon.</string>[m
+                                             <action selector="logOutPressed:" destination="ixB-UU-DRG" eventType="touchUpInside" id="HAV-JZ-0MZ"/>[m
+                                         </connections>[m
+                                     </button>[m
+[31m-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lV7-Xq-38K">[m
+[31m-                                        <rect key="frame" x="258" y="53" width="55" height="25"/>[m
+[31m-                                        <color key="backgroundColor" red="0.99215686270000003" green="0.84313725490000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>[m
+[31m-                                        <constraints>[m
+[31m-                                            <constraint firstAttribute="width" constant="55" id="5Yd-OR-NBv"/>[m
+[31m-                                            <constraint firstAttribute="height" constant="25" id="QK7-fu-1mu"/>[m
+[31m-                                        </constraints>[m
+[31m-                                        <fontDescription key="fontDescription" name="Locator-Regular" family="Locator" pointSize="12"/>[m
+[31m-                                        <state key="normal" title="Help">[m
+[31m-                                            <color key="titleColor" red="0.97647058819999999" green="0.97254901959999995" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>[m
+[31m-                                        </state>[m
+[31m-                                        <connections>[m
+[31m-                                            <action selector="helpPressed:" destination="ixB-UU-DRG" eventType="touchUpInside" id="x5d-Rt-0i0"/>[m
+[31m-                                        </connections>[m
+[31m-                                    </button>[m
+                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AutoSmog" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZwX-xt-4vY">[m
+[31m-                                        <rect key="frame" x="72" y="45" width="95" height="26"/>[m
+[32m+[m[32m                                        <rect key="frame" x="72" y="45" width="94.5" height="25.5"/>[m
+                                         <fontDescription key="fontDescription" name="Panton-ExtraBold" family="Panton" pointSize="20"/>[m
+                                         <color key="textColor" red="0.97647058819999999" green="0.97254901959999995" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>[m
+                                         <nil key="highlightedColor"/>[m
+[36m@@ -669,12 +407,9 @@[m [msmog test results with Oregon.</string>[m
+                                 <color key="backgroundColor" red="0.99215686274509807" green="0.7803921568627451" blue="0.30588235294117649" alpha="1" colorSpace="calibratedRGB"/>[m
+                                 <constraints>[m
+                                     <constraint firstItem="GSJ-7S-iBE" firstAttribute="top" secondItem="BNu-WY-nwB" secondAttribute="top" constant="2" id="2l2-C2-xDj"/>[m
+[31m-                                    <constraint firstItem="lV7-Xq-38K" firstAttribute="top" secondItem="GSJ-7S-iBE" secondAttribute="bottom" constant="3" id="4d3-rV-fxa"/>[m
+                                     <constraint firstItem="BNu-WY-nwB" firstAttribute="leading" secondItem="aea-3M-trU" secondAttribute="leading" constant="16" id="74q-VA-ztg"/>[m
+[31m-                                    <constraint firstItem="lV7-Xq-38K" firstAttribute="top" secondItem="GSJ-7S-iBE" secondAttribute="top" id="8gZ-hK-nNp"/>[m
+                                     <constraint firstItem="ZwX-xt-4vY" firstAttribute="centerY" secondItem="BNu-WY-nwB" secondAttribute="centerY" id="AlV-gz-I5I"/>[m
+                                     <constraint firstItem="30p-us-Ze5" firstAttribute="top" secondItem="GSJ-7S-iBE" secondAttribute="bottom" constant="3" id="H7A-0n-7XA"/>[m
+[31m-                                    <constraint firstItem="30p-us-Ze5" firstAttribute="leading" secondItem="lV7-Xq-38K" secondAttribute="trailing" constant="8" id="Nq7-FT-QCT"/>[m
+                                     <constraint firstAttribute="trailing" secondItem="GSJ-7S-iBE" secondAttribute="trailing" constant="8" id="P3U-gf-pfW"/>[m
+                                     <constraint firstItem="BNu-WY-nwB" firstAttribute="top" secondItem="aea-3M-trU" secondAttribute="top" constant="33" id="V7B-mr-EgC"/>[m
+                                     <constraint firstItem="ZwX-xt-4vY" firstAttribute="leading" secondItem="BNu-WY-nwB" secondAttribute="trailing" constant="2" id="YOz-VG-RLN"/>[m
+[36m@@ -686,14 +421,9 @@[m [msmog test results with Oregon.</string>[m
+                                         <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>[m
+                                     </userDefinedRuntimeAttribute>[m
+                                 </userDefinedRuntimeAttributes>[m
+[31m-                                <variation key="default">[m
+[31m-                                    <mask key="constraints">[m
+[31m-                                        <exclude reference="8gZ-hK-nNp"/>[m
+[31m-                                    </mask>[m
+[31m-                                </variation>[m
+                             </view>[m
+                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   Test History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rle-KI-f0X">[m
+[31m-                                <rect key="frame" x="-4" y="328" width="379" height="60"/>[m
+[32m+[m[32m                                <rect key="frame" x="0.0" y="328" width="600" height="60"/>[m
+                                 <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>[m
+                                 <constraints>[m
+                                     <constraint firstAttribute="height" constant="60" id="wvD-hp-vgi"/>[m
+[36m@@ -702,8 +432,8 @@[m [msmog test results with Oregon.</string>[m
+                                 <color key="textColor" red="0.46666666670000001" green="0.50196078430000002" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>[m
+                                 <nil key="highlightedColor"/>[m
+                             </label>[m
+[31m-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REGISTRATION EXPIRATION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XZe-UA-QZK">[m
+[31m-                                <rect key="frame" x="12" y="179" width="197" height="17"/>[m
+[32m+[m[32m                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DMV EXPIRATION DATE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XZe-UA-QZK">[m
+[32m+[m[32m                                <rect key="frame" x="16" y="179" width="160" height="17"/>[m
+                                 <constraints>[m
+                                     <constraint firstAttribute="width" constant="180" id="g4s-Vm-wBA"/>[m
+                                 </constraints>[m
+[36m@@ -716,14 +446,14 @@[m [msmog test results with Oregon.</string>[m
+                                     </mask>[m
+                                 </variation>[m
+                             </label>[m
+[31m-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iBC-a1-oP0">[m
+[31m-                                <rect key="frame" x="12" y="193" width="197" height="0.0"/>[m
+[32m+[m[32m                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iBC-a1-oP0">[m
+[32m+[m[32m                                <rect key="frame" x="16" y="193" width="197" height="0.0"/>[m
+                                 <fontDescription key="fontDescription" name="Locator-Light" family="Locator" pointSize="14"/>[m
+                                 <color key="textColor" red="0.46666666670000001" green="0.50196078430000002" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>[m
+                                 <nil key="highlightedColor"/>[m
+                             </label>[m
+                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v3R-Qw-aNQ">[m
+[31m-                                <rect key="frame" x="-4" y="97" width="379" height="60"/>[m
+[32m+[m[32m                                <rect key="frame" x="0.0" y="97" width="600" height="60"/>[m
+                                 <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>[m
+                                 <constraints>[m
+                                     <constraint firstAttribute="height" constant="60" id="7Kr-rW-Dtc"/>[m
+[36m@@ -733,28 +463,45 @@[m [msmog test results with Oregon.</string>[m
+                                 <nil key="highlightedColor"/>[m
+                             </label>[m
+                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JMY-22-5hA">[m
+[31m-                                <rect key="frame" x="58" y="250" width="250" height="50"/>[m
+[32m+[m[32m                                <rect key="frame" x="172" y="250" width="250" height="50"/>[m
+                                 <color key="backgroundColor" red="0.92941176470588238" green="0.55294117647058827" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>[m
+                                 <constraints>[m
+                                     <constraint firstAttribute="width" constant="250" id="3rC-LG-XAz"/>[m
+                                     <constraint firstAttribute="height" constant="50" id="ljd-d8-2xF"/>[m
+                                 </constraints>[m
+                                 <fontDescription key="fontDescription" name="Locator-Bold" family="Locator" pointSize="18"/>[m
+[31m-                                <state key="normal" title="RUN SMOG CHECK">[m
+[32m+[m[32m                                <state key="normal" title="RUN EMISSIONS CHECK">[m
+                                     <color key="titleColor" red="0.97647058819999999" green="0.97254901959999995" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>[m
+                                 </state>[m
+                                 <connections>[m
+                                     <action selector="runSmogPressed:" destination="ixB-UU-DRG" eventType="touchUpInside" id="tKp-S1-0X5"/>[m
+                                 </connections>[m
+                             </button>[m
+[32m+[m[32m                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lV7-Xq-38K">[m
+[32m+[m[32m                                <rect key="frame" x="311" y="114" width="55" height="25"/>[m
+[32m+[m[32m                                <color key="backgroundColor" red="0.99215686270000003" green="0.84313725490000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>[m
+[32m+[m[32m                                <constraints>[m
+[32m+[m[32m                                    <constraint firstAttribute="width" constant="55" id="5Yd-OR-NBv"/>[m
+[32m+[m[32m                                    <constraint firstAttribute="height" constant="25" id="QK7-fu-1mu"/>[m
+[32m+[m[32m                                </constraints>[m
+[32m+[m[32m                                <fontDescription key="fontDescription" name="Locator-Regular" family="Locator" pointSize="12"/>[m
+[32m+[m[32m                                <state key="normal" title="Help">[m
+[32m+[m[32m                                    <color key="titleColor" red="0.97647058819999999" green="0.97254901959999995" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>[m
+[32m+[m[32m                                </state>[m
+[32m+[m[32m                                <connections>[m
+[32m+[m[32m                                    <action selector="helpPressed:" destination="ixB-UU-DRG" eventType="touchUpInside" id="x5d-Rt-0i0"/>[m
+[32m+[m[32m                                </connections>[m
+[32m+[m[32m                            </button>[m
+                         </subviews>[m
+                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>[m
+                         <constraints>[m
+                             <constraint firstItem="aea-3M-trU" firstAttribute="top" secondItem="djH-a1-hBz" secondAttribute="top" id="0yu-fR-QbI"/>[m
+                             <constraint firstAttribute="trailingMargin" secondItem="v3R-Qw-aNQ" secondAttribute="trailing" constant="-20" id="1lw-95-kW7"/>[m
+                             <constraint firstItem="aea-3M-trU" firstAttribute="trailing" secondItem="v3R-Qw-aNQ" secondAttribute="trailing" id="1rN-g3-M2R"/>[m
+[32m+[m[32m                            <constraint firstItem="lV7-Xq-38K" firstAttribute="leading" secondItem="v3R-Qw-aNQ" secondAttribute="trailing" constant="-122" id="2Wb-wG-Ekf"/>[m
+                             <constraint firstItem="aea-3M-trU" firstAttribute="centerX" secondItem="KGB-JR-V6I" secondAttribute="centerX" id="5eN-rk-H0D"/>[m
+                             <constraint firstAttribute="trailingMargin" secondItem="KGB-JR-V6I" secondAttribute="trailing" id="6hX-bc-i28"/>[m
+[32m+[m[32m                            <constraint firstItem="lV7-Xq-38K" firstAttribute="centerY" secondItem="v3R-Qw-aNQ" secondAttribute="centerY" id="8yz-mE-Dhl"/>[m
+                             <constraint firstItem="RgQ-fe-bjK" firstAttribute="leading" secondItem="iBC-a1-oP0" secondAttribute="trailing" constant="71" id="9Hl-Qb-Rrb"/>[m
+                             <constraint firstItem="aea-3M-trU" firstAttribute="trailing" secondItem="rle-KI-f0X" secondAttribute="trailing" id="9iG-kU-6dM"/>[m
+                             <constraint firstAttribute="trailingMargin" secondItem="rle-KI-f0X" secondAttribute="trailing" constant="-20" id="AEt-TA-OhO"/>[m
+[36m@@ -822,14 +569,11 @@[m [msmog test results with Oregon.</string>[m
+                                 <exclude reference="d1F-AT-reZ"/>[m
+                                 <exclude reference="gcH-zF-1Dt"/>[m
+                                 <exclude reference="WXm-tX-lYn"/>[m
+[31m-                                <exclude reference="9Hl-Qb-Rrb"/>[m
+[31m-                                <exclude reference="AVv-HU-P4b"/>[m
+[31m-                                <exclude reference="FA9-wi-Obm"/>[m
+[31m-                                <exclude reference="ZtV-Xf-8tX"/>[m
+                                 <exclude reference="AEt-TA-OhO"/>[m
+                                 <exclude reference="ZHg-bg-Hll"/>[m
+                                 <exclude reference="gMC-co-dmm"/>[m
+                                 <exclude reference="nxV-ao-ChM"/>[m
+[32m+[m[32m                                <exclude reference="2Wb-wG-Ekf"/>[m
+                                 <exclude reference="6hX-bc-i28"/>[m
+                                 <exclude reference="Cwu-Jd-Xxh"/>[m
+                                 <exclude reference="Div-kU-4Kr"/>[m
+[36m@@ -843,6 +587,10 @@[m [msmog test results with Oregon.</string>[m
+                                 <exclude reference="tyG-6w-PGf"/>[m
+                                 <exclude reference="xFm-VF-xIL"/>[m
+                                 <exclude reference="zfe-c2-ZUd"/>[m
+[32m+[m[32m                                <exclude reference="9Hl-Qb-Rrb"/>[m
+[32m+[m[32m                                <exclude reference="AVv-HU-P4b"/>[m
+[32m+[m[32m                                <exclude reference="FA9-wi-Obm"/>[m
+[32m+[m[32m                                <exclude reference="ZtV-Xf-8tX"/>[m
+                             </mask>[m
+                         </variation>[m
+                     </view>[m
+[36m@@ -866,21 +614,21 @@[m [msmog test results with Oregon.</string>[m
+             <objects>[m
+                 <tableViewController storyboardIdentifier="SmogResults" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wy6-JH-WzX" customClass="ResultsViewController" sceneMemberID="viewController">[m
+                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" id="vWr-u4-47b">[m
+[31m-                        <rect key="frame" x="0.0" y="0.0" width="394" height="300"/>[m
+[32m+[m[32m                        <rect key="frame" x="0.0" y="0.0" width="615" height="233"/>[m
+                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>[m
+                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>[m
+                         <color key="separatorColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>[m
+                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>[m
+                         <prototypes>[m
+                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SmogCellIdentifier" rowHeight="118" id="e1A-KD-CkR" customClass="SmogResultCell">[m
+[31m-                                <rect key="frame" x="0.0" y="28" width="394" height="118"/>[m
+[32m+[m[32m                                <rect key="frame" x="0.0" y="28" width="615" height="118"/>[m
+                                 <autoresizingMask key="autoresizingMask"/>[m
+                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" tableViewCell="e1A-KD-CkR" id="ro4-Ug-MDU">[m
+[31m-                                    <rect key="frame" x="0.0" y="0.0" width="394" height="117.5"/>[m
+[32m+[m[32m                                    <rect key="frame" x="0.0" y="0.0" width="615" height="117.5"/>[m
+                                     <autoresizingMask key="autoresizingMask"/>[m
+                                     <subviews>[m
+[31m-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SUCCESSFUL TEST" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="31I-l3-ULx">[m
+[31m-                                            <rect key="frame" x="25" y="18" width="177" height="21"/>[m
+[32m+[m[32m                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="SUCCESSFUL TEST" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="31I-l3-ULx">[m
+[32m+[m[32m                                            <rect key="frame" x="25" y="18" width="275" height="21"/>[m
+                                             <constraints>[m
+                                                 <constraint firstAttribute="height" constant="21" id="eTU-f9-ckG"/>[m
+                                                 <constraint firstAttribute="width" constant="177" id="tOg-b0-I4K"/>[m
+[36m@@ -888,8 +636,13 @@[m [msmog test results with Oregon.</string>[m
+                                             <fontDescription key="fontDescription" name="Locator-Bold" family="Locator" pointSize="18"/>[m
+                                             <color key="textColor" red="0.086274509803921567" green="0.84313725490196079" blue="0.41960784313725491" alpha="1" colorSpace="calibratedRGB"/>[m
+                                             <nil key="highlightedColor"/>[m
+[32m+[m[32m                                            <variation key="default">[m
+[32m+[m[32m                                                <mask key="constraints">[m
+[32m+[m[32m                                                    <exclude reference="tOg-b0-I4K"/>[m
+[32m+[m[32m                                                </mask>[m
+[32m+[m[32m                                            </variation>[m
+                                         </label>[m
+[31m-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="September 15, 2015" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SRh-YP-Ljo">[m
+[32m+[m[32m                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="September 15, 2015" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SRh-YP-Ljo">[m
+                                             <rect key="frame" x="200" y="17" width="180" height="21"/>[m
+                                             <constraints>[m
+                                                 <constraint firstAttribute="width" constant="180" id="dJt-zm-d5N"/>[m
+[36m@@ -898,7 +651,7 @@[m [msmog test results with Oregon.</string>[m
+                                             <color key="textColor" red="0.46666666670000001" green="0.50196078430000002" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>[m
+                                             <nil key="highlightedColor"/>[m
+                                         </label>[m
+[31m-                                        <textView opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Submitted test results to Oregon. Login to DEQ Tool to view results." translatesAutoresizingMaskIntoConstraints="NO" id="xdB-Ll-Ey3">[m
+[32m+[m[32m                                        <textView opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Submitted test results to Oregon. Login to DEQ Tool to view results." translatesAutoresizingMaskIntoConstraints="NO" id="xdB-Ll-Ey3">[m
+                                             <rect key="frame" x="20" y="44" width="360" height="63"/>[m
+                                             <constraints>[m
+                                                 <constraint firstAttribute="width" constant="254" id="MSW-wd-Sby"/>[m
+[36m@@ -939,6 +692,7 @@[m [msmog test results with Oregon.</string>[m
+                                         <constraint firstItem="31I-l3-ULx" firstAttribute="top" secondItem="ro4-Ug-MDU" secondAttribute="topMargin" constant="10" id="yFr-Z9-fYk"/>[m
+                                         <constraint firstAttribute="bottomMargin" secondItem="xdB-Ll-Ey3" secondAttribute="bottom" constant="5" id="yd0-ZE-Qhk"/>[m
+                                         <constraint firstAttribute="bottomMargin" secondItem="B6K-vs-Bkp" secondAttribute="bottom" constant="12" id="yd2-5b-oaT"/>[m
+[32m+[m[32m                                        <constraint firstItem="SRh-YP-Ljo" firstAttribute="leading" secondItem="31I-l3-ULx" secondAttribute="trailing" constant="-100" id="zUL-YT-ern"/>[m
+                                     </constraints>[m
+                                     <variation key="default">[m
+                                         <mask key="constraints">[m
+[36m@@ -981,7 +735,7 @@[m [msmog test results with Oregon.</string>[m
+                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>[m
+                         <subviews>[m
+                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Dz-M2-yTw">[m
+[31m-                                <rect key="frame" x="0.0" y="535" width="301" height="70"/>[m
+[32m+[m[32m                                <rect key="frame" x="0.0" y="535" width="300.5" height="70"/>[m
+                                 <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>[m
+                                 <fontDescription key="fontDescription" name="Locator-Regular" family="Locator" pointSize="20"/>[m
+                                 <state key="normal" title="Exit">[m
+[36m@@ -992,7 +746,7 @@[m [msmog test results with Oregon.</string>[m
+                                 </connections>[m
+                             </button>[m
+                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B9W-tp-y0h">[m
+[31m-                                <rect key="frame" x="300" y="535" width="300" height="70"/>[m
+[32m+[m[32m                                <rect key="frame" x="299" y="535" width="300.5" height="70"/>[m
+                                 <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>[m
+                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>[m
+                                 <state key="normal">[m
+[36m@@ -1024,17 +778,18 @@[m [msmog test results with Oregon.</string>[m
+                                 </variation>[m
+                             </label>[m
+                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="BmW-NV-C9j">[m
+[31m-                                <rect key="frame" x="376" y="551" width="148" height="37"/>[m
+[32m+[m[32m                                <rect key="frame" x="375" y="551" width="148.5" height="37"/>[m
+                                 <color key="color" red="0.46666666670000001" green="0.50196078430000002" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>[m
+                             </activityIndicatorView>[m
+                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zav-Vd-Hzs">[m
+                                 <rect key="frame" x="20" y="121" width="560" height="414"/>[m
+                                 <subviews>[m
+[31m-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="UICaptionLabel" text="The engine needs to be running for us to run an emissions check.  We'll proceed once we detect that the car is in this state." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SCv-eR-AjN">[m
+[31m-                                        <rect key="frame" x="153" y="269" width="253" height="107"/>[m
+[32m+[m[32m                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="UICaptionLabel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SCv-eR-AjN">[m
+[32m+[m[32m                                        <rect key="frame" x="127.5" y="269" width="305.5" height="106.5"/>[m
+                                         <constraints>[m
+                                             <constraint firstAttribute="height" constant="164" id="8BB-6z-ECk"/>[m
+                                         </constraints>[m
+[32m+[m[32m                                        <string key="text">We’ll proceed once we detect the  vehicle is parked and engine is running.  Data is collected from the onboard  emissions system, not the tailpipe.</string>[m
+                                         <fontDescription key="fontDescription" name="Locator-Light" family="Locator" pointSize="18"/>[m
+                                         <color key="textColor" red="0.46666666670000001" green="0.50196078430000002" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>[m
+                                         <nil key="highlightedColor"/>[m
+[36m@@ -1045,7 +800,7 @@[m [msmog test results with Oregon.</string>[m
+                                         </variation>[m
+                                     </label>[m
+                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="UILabelLabel" text="WAITING FOR IGNITION" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J7e-mT-cRo">[m
+[31m-                                        <rect key="frame" x="164" y="235" width="232" height="24"/>[m
+[32m+[m[32m                                        <rect key="frame" x="164" y="235" width="231.5" height="24"/>[m
+                                         <constraints>[m
+                                             <constraint firstAttribute="height" constant="53" id="4Od-Ma-68e"/>[m
+                                         </constraints>[m
+[36m@@ -1160,8 +915,8 @@[m [msmog test results with Oregon.</string>[m
+                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>[m
+                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>[m
+                         <subviews>[m
+[31m-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jP3-W5-tHr">[m
+[31m-                                <rect key="frame" x="300" y="535" width="280" height="70"/>[m
+[32m+[m[32m                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jP3-W5-tHr">[m
+[32m+[m[32m                                <rect key="frame" x="299" y="535" width="280.5" height="70"/>[m
+                                 <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>[m
+                                 <constraints>[m
+                                     <constraint firstAttribute="width" constant="188" id="qDd-8r-Ni2"/>[m
+[36m@@ -1211,8 +966,8 @@[m [msmog test results with Oregon.</string>[m
+                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3mh-c7-PqM">[m
+                                 <rect key="frame" x="20" y="121" width="560" height="414"/>[m
+                                 <subviews>[m
+[31m-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="UILabelLabel" text="CHECKING EMISSIONS DATA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zdi-gR-Sm8">[m
+[31m-                                        <rect key="frame" x="140" y="180" width="280" height="53"/>[m
+[32m+[m[32m                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="UILabelLabel" text="COLLECTING EMISSIONS DATA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zdi-gR-Sm8">[m
+[32m+[m[32m                                        <rect key="frame" x="129" y="180" width="301" height="53"/>[m
+                                         <constraints>[m
+                                             <constraint firstAttribute="height" constant="53" id="jFG-5h-pqh"/>[m
+                                         </constraints>[m
+[36m@@ -1220,13 +975,6 @@[m [msmog test results with Oregon.</string>[m
+                                         <color key="textColor" red="0.46666666670000001" green="0.50196078430000002" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>[m
+                                         <nil key="highlightedColor"/>[m
+                                     </label>[m
+[31m-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="UICaptionLabel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PNV-0J-j89">[m
+[31m-                                        <rect key="frame" x="145" y="233" width="271" height="107"/>[m
+[31m-                                        <string key="text">This test may take a few minutes to complete. Please keep your phone close to the Link during this time.  If you kill the app, you will  have to restart the test.</string>[m
+[31m-                                        <fontDescription key="fontDescription" name="Locator-Light" family="Locator" pointSize="18"/>[m
+[31m-                                        <color key="textColor" red="0.46666666670000001" green="0.50196078430000002" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>[m
+[31m-                                        <nil key="highlightedColor"/>[m
+[31m-                                    </label>[m
+                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KUY-pk-Ta1">[m
+                                         <rect key="frame" x="200" y="74" width="160" height="66"/>[m
+                                         <constraints>[m
+[36m@@ -1234,6 +982,13 @@[m [msmog test results with Oregon.</string>[m
+                                             <constraint firstAttribute="height" constant="66" id="udV-O3-v73"/>[m
+                                         </constraints>[m
+                                     </imageView>[m
+[32m+[m[32m                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="UICaptionLabel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PNV-0J-j89">[m
+[32m+[m[32m                                        <rect key="frame" x="145.5" y="233" width="270" height="170.5"/>[m
+[32m+[m[32m                                        <string key="text">This test should take less than two  minutes to complete. Please keep  your phone close to the Link  during this time.   If you kill the app, you will  have to restart the test. </string>[m
+[32m+[m[32m                                        <fontDescription key="fontDescription" name="Locator-Light" family="Locator" pointSize="18"/>[m
+[32m+[m[32m                                        <color key="textColor" red="0.46666666670000001" green="0.50196078430000002" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>[m
+[32m+[m[32m                                        <nil key="highlightedColor"/>[m
+[32m+[m[32m                                    </label>[m
+                                 </subviews>[m
+                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>[m
+                                 <constraints>[m
+[36m@@ -1402,13 +1157,13 @@[m [msmog test results with Oregon.</string>[m
+                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>[m
+                         <subviews>[m
+                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="UITitleLabel" text="Success!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="slF-Cd-DwA">[m
+[31m-                                <rect key="frame" x="0.0" y="64" width="600" height="29"/>[m
+[32m+[m[32m                                <rect key="frame" x="0.0" y="64" width="600" height="28.5"/>[m
+                                 <fontDescription key="fontDescription" name="Locator-Bold" family="Locator" pointSize="24"/>[m
+                                 <color key="textColor" red="0.46666666670000001" green="0.50196078430000002" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>[m
+                                 <nil key="highlightedColor"/>[m
+                             </label>[m
+                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Step 3 of 3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hrf-Tw-0kA">[m
+[31m-                                <rect key="frame" x="265" y="107" width="71" height="21"/>[m
+[32m+[m[32m                                <rect key="frame" x="265" y="107" width="70.5" height="21"/>[m
+                                 <constraints>[m
+                                     <constraint firstAttribute="width" constant="82" id="5lb-NK-Nfz"/>[m
+                                     <constraint firstAttribute="height" constant="21" id="Nb3-ad-Qw5"/>[m
+[36m@@ -1440,13 +1195,13 @@[m [msmog test results with Oregon.</string>[m
+                                 <rect key="frame" x="20" y="128" width="560" height="407"/>[m
+                                 <subviews>[m
+                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VIN:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="46W-ys-1Pp">[m
+[31m-                                        <rect key="frame" x="263" y="244" width="34" height="22"/>[m
+[32m+[m[32m                                        <rect key="frame" x="263" y="244" width="33.5" height="21.5"/>[m
+                                         <fontDescription key="fontDescription" name="Locator-Light" family="Locator" pointSize="18"/>[m
+                                         <color key="textColor" red="0.46666666670000001" green="0.50196078430000002" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>[m
+                                         <nil key="highlightedColor"/>[m
+                                     </label>[m
+                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1FAFP34384W187315" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dSo-ii-fZR">[m
+[31m-                                        <rect key="frame" x="194" y="276" width="171" height="22"/>[m
+[32m+[m[32m                                        <rect key="frame" x="194" y="275" width="171" height="21.5"/>[m
+                                         <fontDescription key="fontDescription" name="Locator-Light" family="Locator" pointSize="18"/>[m
+                                         <color key="textColor" red="0.46666666670000001" green="0.50196078430000002" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>[m
+                                         <nil key="highlightedColor"/>[m
+[36m@@ -1466,7 +1221,7 @@[m [msmog test results with Oregon.</string>[m
+                                         </variation>[m
+                                     </imageView>[m
+                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="UILabelLabel" text="EMISSIONS DATA SENT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sej-3J-74s">[m
+[31m-                                        <rect key="frame" x="166" y="184" width="229" height="40"/>[m
+[32m+[m[32m                                        <rect key="frame" x="166" y="184" width="228.5" height="40"/>[m
+                                         <constraints>[m
+                                             <constraint firstAttribute="height" constant="25" id="cxB-mh-u0E"/>[m
+                                             <constraint firstAttribute="height" constant="53" id="d8B-sa-Tau"/>[m
+[36m@@ -1482,8 +1237,8 @@[m [msmog test results with Oregon.</string>[m
+                                             </mask>[m
+                                         </variation>[m
+                                     </label>[m
+[31m-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" restorationIdentifier="UICaptionLabel" text="Please turn off your vehicle and check Oregon's DEQ website in a few days  to see your results." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pTs-HB-tzF">[m
+[31m-                                        <rect key="frame" x="132" y="308" width="296" height="64"/>[m
+[32m+[m[32m                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="UICaptionLabel" text="You may check your results at deqtoo.org" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pTs-HB-tzF">[m
+[32m+[m[32m                                        <rect key="frame" x="174.5" y="307" width="211" height="43"/>[m
+                                         <fontDescription key="fontDescription" name="Locator-Light" family="Locator" pointSize="18"/>[m
+                                         <color key="textColor" red="0.46666666670000001" green="0.50196078430000002" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>[m
+                                         <nil key="highlightedColor"/>[m
+[36m@@ -1511,8 +1266,8 @@[m [msmog test results with Oregon.</string>[m
+                                 </constraints>[m
+                                 <variation key="default">[m
+                                     <mask key="constraints">[m
+[31m-                                        <exclude reference="KIT-ZK-fUX"/>[m
+                                         <exclude reference="OBE-aH-VIU"/>[m
+[32m+[m[32m                                        <exclude reference="KIT-ZK-fUX"/>[m
+                                     </mask>[m
+                                 </variation>[m
+                             </view>[m
+[1mdiff --git a/Oregon/DTCCode.m b/Oregon/DTCCode.m[m
+[1mindex 808440e..a350e8f 100644[m
+[1m--- a/Oregon/DTCCode.m[m
+[1m+++ b/Oregon/DTCCode.m[m
+[36m@@ -104,7 +104,7 @@[m
+ }[m
+ [m
+ - (NSString *) description {[m
+[31m-    return [NSString stringWithFormat:@"<d4p1:%@><d4p1:DTCCode>%@%@%@%@%@</d4p1:DTCCode></d4p1:%@>", self.type, self.first, self.second, self.third, self.fourth, self.fifth, self.type];[m
+[32m+[m[32m    return [NSString stringWithFormat:@"<d4p1:ROBDRequest.%@><d4p1:DTCCode>%@%@%@%@%@</d4p1:DTCCode></d4p1:ROBDRequest.%@>", self.type, self.first, self.second, self.third, self.fourth, self.fifth, self.type];[m
+ }[m
+ [m
+ @end[m
+\ No newline at end of file[m
+[1mdiff --git a/Oregon/DashboardViewController.m b/Oregon/DashboardViewController.m[m
+[1mindex ecaca28..147868f 100644[m
+[1m--- a/Oregon/DashboardViewController.m[m
+[1m+++ b/Oregon/DashboardViewController.m[m
+[36m@@ -137,7 +137,7 @@[m
+     UIViewController *controller = [storyboard instantiateViewControllerWithIdentifier:@"Welcome"];[m
+     [self renderModalViewController:controller withHeight:(self.view.frame.size.height/2 + 100)];[m
+     ((WelcomeViewController*) controller).welcomeTitle.text = @"Change Expiration";[m
+[31m-    ((WelcomeViewController*) controller).welcomeBlurb.text = @"Enter your DMV expiration date.\n\nIf your expiration date is not within 90 days\nof today, you can still run your test, but\nyour results will not count toward your next DMV registration.";[m
+[32m+[m[32m    ((WelcomeViewController*) controller).welcomeBlurb.text = @"\nEnter your DMV vehicle expiration date.";[m
+ }[m
+ [m
+ - (IBAction)helpPressed:(id)sender {[m
+[1mdiff --git a/Oregon/ResultsViewController.m b/Oregon/ResultsViewController.m[m
+[1mindex bb7e810..2892ea5 100644[m
+[1m--- a/Oregon/ResultsViewController.m[m
+[1m+++ b/Oregon/ResultsViewController.m[m
+[36m@@ -34,16 +34,17 @@[m [mstatic NSString *CellIdentifier = @"SmogCellIdentifier";[m
+     PFObject * object = [_smogResponses objectAtIndex:indexPath.row];[m
+     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];[m
+     [dateFormatter setDateStyle:NSDateFormatterMediumStyle];[m
+[32m+[m[32m    [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"PST"]];[m
+     [m
+[31m-    cell.result.text = @"COMPLETED TEST";[m
+[31m-    cell.date.text = [dateFormatter stringFromDate:[[object createdAt] dateByAddingTimeInterval:0]];[m
+[32m+[m[32m    cell.result.text = @"EMISSIONS DATA SENT";[m
+[32m+[m[32m    cell.date.text = [dateFormatter stringFromDate:[object createdAt]];[m
+     [m
+     if ([object[@"smogTestSent"] isEqual: @"1"] && [object[@"smogTestCompleted"] isEqual: @"1"]) {[m
+[31m-        NSMutableAttributedString * str = [[NSMutableAttributedString alloc] initWithString:@"Login to Oregon DEQ"];[m
+[32m+[m[32m        NSMutableAttributedString * str = [[NSMutableAttributedString alloc] initWithString:@"Visit Oregon DEQ"];[m
+         [str addAttribute: NSLinkAttributeName value: @"http://deqtoo.com" range: NSMakeRange(0, str.length)];[m
+         [str appendAttributedString:[[NSAttributedString alloc] initWithString:@" to see whether you passed."]];[m
+ [m
+[31m-        NSMutableAttributedString * str1 = [[NSMutableAttributedString alloc] initWithString: [NSString stringWithFormat: @"Test results were submitted for VIN:\n%@\n", object[@"vin"]]];[m
+[32m+[m[32m        NSMutableAttributedString * str1 = [[NSMutableAttributedString alloc] initWithString: [NSString stringWithFormat: @"Emissions data was submitted for VIN:\n%@\n", object[@"vin"]]];[m
+         [str1 appendAttributedString:str];[m
+         [m
+         UIFont *font = [UIFont fontWithName:@"Locator-Regular" size:16.0];[m
+[36m@@ -54,10 +55,10 @@[m [mstatic NSString *CellIdentifier = @"SmogCellIdentifier";[m
+         [cell.information setTextColor:[UIColor colorWithRed:0.467 green:0.502 blue:0.506 alpha:1]];[m
+         [cell.result setTextColor:[UIColor colorWithRed:0.086 green:0.843 blue:0.42 alpha:1]];[m
+     } else if ([object[@"smogTestSent"] isEqual: @"0"] && [object[@"smogTestCompleted"] isEqual: @"1"]) {[m
+[31m-        NSMutableAttributedString * str = [[NSMutableAttributedString alloc] initWithString:@"Login to Oregon DEQ"];[m
+[32m+[m[32m        NSMutableAttributedString * str = [[NSMutableAttributedString alloc] initWithString:@"Visit Oregon DEQ"];[m
+         [str addAttribute: NSLinkAttributeName value: @"http://deqtoo.com" range: NSMakeRange(0, str.length)];[m
+[31m-        [str appendAttributedString:[[NSAttributedString alloc] initWithString:@" to see whether you passed. Results will not be used however, as your DMV registration expiration was not within 90 days."]];[m
+[31m-        NSMutableAttributedString * str1 = [[NSMutableAttributedString alloc] initWithString: [NSString stringWithFormat: @"Test completed for %@.\n", object[@"vin"]]];[m
+[32m+[m[32m        [str appendAttributedString:[[NSAttributedString alloc] initWithString:@" to see whether you passed. Data will not be used however, as your DMV registration expiration was not within 90 days."]];[m
+[32m+[m[32m        NSMutableAttributedString * str1 = [[NSMutableAttributedString alloc] initWithString: [NSString stringWithFormat: @"Emissions data collected for %@.\n", object[@"vin"]]];[m
+         [m
+         [str1 appendAttributedString:str];[m
+         [m
+[36m@@ -69,9 +70,9 @@[m [mstatic NSString *CellIdentifier = @"SmogCellIdentifier";[m
+         [cell.information setTextColor:[UIColor colorWithRed:0.467 green:0.502 blue:0.506 alpha:1]];[m
+         [cell.result setTextColor:[UIColor colorWithRed:0.086 green:0.843 blue:0.42 alpha:1]];[m
+     } else {[m
+[31m-        cell.result.text = @"INCOMPLETE TEST";[m
+[32m+[m[32m        cell.result.text = @"UNABLE TO SEND DATA";[m
+         [cell.result setTextColor:[UIColor colorWithRed:1 green:0.255 blue:0.255 alpha:1]];[m
+[31m-        cell.information.text = @"Failed to perform smog check. Either the test was quit before completion or there was a connectivity problem.";[m
+[32m+[m[32m        cell.information.text = @"Failed to collect emissions data. Either the emissions check was quit before completion or there was a connectivity problem.";[m
+     }[m
+     [m
+     return cell;[m
+[1mdiff --git a/Oregon/SmogTestViewController.m b/Oregon/SmogTestViewController.m[m
+[1mindex 669156e..0cd548a 100644[m
+[1m--- a/Oregon/SmogTestViewController.m[m
+[1m+++ b/Oregon/SmogTestViewController.m[m
+[36m@@ -316,11 +316,11 @@[m [mstatic NSArray* getAttachedDevices() {[m
+     }];[m
+ }[m
+ [m
+[31m--(NSString *) getUTC:(NSString *)dateFormat {[m
+[32m+[m[32m-(NSString *) getTime:(NSString *)dateFormat {[m
+     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];[m
+     [formatter setDateFormat:dateFormat];[m
+ [m
+[31m-    NSTimeZone *timeZone = [NSTimeZone timeZoneWithName:@"UTC"];[m
+[32m+[m[32m    NSTimeZone *timeZone = [NSTimeZone timeZoneWithName:@"PST"];[m
+     [formatter setTimeZone:timeZone];[m
+ [m
+     NSDate *now = [NSDate date];[m
+[36m@@ -331,12 +331,12 @@[m [mstatic NSArray* getAttachedDevices() {[m
+ -(void) getSmogParameters {[m
+     requestData = [[OBDRequestData alloc] init];[m
+ [m
+[31m-    NSLog(@"%@", [self getUTC:@"yyyyMMdd"]);[m
+[31m-    NSLog(@"%@", [self getUTC:@"HHmmss"]);[m
+[32m+[m[32m    NSLog(@"%@", [self getTime:@"yyyyMMdd"]);[m
+[32m+[m[32m    NSLog(@"%@", [self getTime:@"HHmmss"]);[m
+ [m
+     requestData.deviceFirmware = [_currentSession.adapter.accessory firmwareRevision];[m
+[31m-    requestData.dataCollectionDate = [self getUTC:@"yyyyMMdd"];[m
+[31m-    requestData.dateCollectionTime = [self getUTC:@"HHmmss"];[m
+[32m+[m[32m    requestData.dataCollectionDate = [self getTime:@"yyyyMMdd"];[m
+[32m+[m[32m    requestData.dateCollectionTime = [self getTime:@"HHmmss"];[m
+ [m
+     // List of smog parameters[m
+     NSArray * smogParameters = @[[m
+[36m@@ -404,8 +404,8 @@[m [mstatic NSArray* getAttachedDevices() {[m
+             NSLog(@"SCANTOOL MODE OFF? %@", inResponse);[m
+ [m
+             // Last thing to do before sending data to Oregon[m
+[31m-            requestData.payloadDate = [self getUTC:@"yyyyMMdd"];[m
+[31m-            requestData.payloadTime = [self getUTC:@"HHmmss"];[m
+[32m+[m[32m            requestData.payloadDate = [self getTime:@"yyyyMMdd"];[m
+[32m+[m[32m            requestData.payloadTime = [self getTime:@"HHmmss"];[m
+             NSLog(@"%@", [requestData description]);[m
+             requestData.smogViewController = self;[m
+             [requestData postOBDDeqTooData];[m

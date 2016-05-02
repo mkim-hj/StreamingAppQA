@@ -1,0 +1,6 @@
+framework module AUTLogKit {
+  umbrella header "AUTLogKit.h"
+
+  export *
+  module * { export * }
+}

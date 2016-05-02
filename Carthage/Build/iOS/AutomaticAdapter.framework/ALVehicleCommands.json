@@ -1,0 +1,240 @@
+{
+  "elm-device-description" : {
+    "group" : "ELM",
+    "avaliable" : "1.0",
+    "label" : "Device",
+    "description" : "display the device description",
+    "command" : "AT@1",
+    "response-type" : "string"
+  },
+  "elm-device-identifier" : {
+    "group" : "ELM",
+    "available" : "1.3",
+    "label" : "Identifier",
+    "description" : "get the device identifier",
+    "command" : "AT@2",
+    "response-type" : "string"
+  },
+  "elm-describe-protocol-number" : {
+    "group" : "ELM",
+    "avaliable" : "1.0",
+    "label" : "Protocol",
+    "description" : "Describe Protocol Number",
+    "command" : "ATDPN"
+  },
+  "obd-supported-pids" : {
+    "group" : "OBD",
+    "label" : "Supported",
+    "description" : "Supported PIDs",
+    "command" : "0100",
+    "response-type" : "bits",
+    "response-size" : 4,
+    "response-bits" : [
+        "obd-monitor-status",
+        "obd-freeze-dtc",
+        "obd-fuel-system-status",
+        "obd-engine-load",
+        "obd-coolant-temp",
+        "obd-fuel-pressure",
+        "obd-intake-manifold-absolute-pressure",
+        "obd-engine-rpm",
+        "obd-vehicle-speed",
+        "obd-timing-advance",
+        "obd-intake-air-temperature",
+        "obd-mass-air-flow",
+        "obd-throttle-position",
+        "obd-engine-runtime",
+        "obd-vehicle-identification-number"
+    ]
+  },
+  "obd-monitor-status" : {
+    "group" : "OBD",
+    "label" : "Check Engine",
+    "description" : "MIL Status and DTC Count",
+    "command" : "0101",
+    "streaming" : true,
+    "response-size" : 4,
+    "response-type" : "packed"
+  },
+  "obd-freeze-dtc" : {
+    "group" : "OBD",
+    "description" : "Freeze Diagnostic Codes",
+    "command" : "0102",
+    "supported" : false
+  },
+  "obd-fuel-system-status" : {
+    "group" : "ODB",
+    "label" : "Fuel Status",
+    "description" : "Fuel system status",
+    "command" : "0103",
+    "response-size" : 2,
+    "response-type" : "packed"
+  },
+  "obd-engine-load" : {
+    "group" : "ODB",
+    "label" : "Load",
+    "description" : "Calculated engine load value",
+    "command" : "0104",
+    "response-type" : "number",
+    "response-units" : "%",
+    "response-formula" : "A*100/255",
+    "response-limits" : [0, 100]
+  },
+  "obd-coolant-temp" : {
+    "group" : "ODB",
+    "label" : "Coolant",
+    "description" : "Engine coolant temperature",
+    "command" : "0105",
+    "response-type" : "number",
+    "response-units" : "C",
+    "response-formula" : "A-40",
+    "response-limits" : [-40, 215]
+  },
+  "obd-fuel-pressure" : {
+    "group" : "ODB",
+    "label" : "Fuel Pressure",
+    "description" : "Fuel pressure",
+    "command" : "010A",
+    "response-type" : "number",
+    "response-units" : "kPa",
+    "response-formula" : "A*3",
+    "response-limits" : [0, 765]
+  },
+  "obd-intake-manifold-absolute-pressure" : {
+    "group" : "OBD",
+    "label" : "Intake Pressure",
+    "description" : "Intake Manifold Absolute Pressure (MAP)",
+    "command" : "010B",
+    "response-type" : "number",
+    "response-units" : "kPa",
+    "response-limits" : [0, 255]
+  },
+  "obd-engine-rpm" : {
+    "group" : "OBD",
+    "label" : "RPM",
+    "description" : "Engine Revolutions per Minute",
+    "command" : "010C",
+    "respone-size" : 2,
+    "response-type" : "packed",
+    "response-units" : "1/4 turn",
+    "response-formula" : "((A*256)+B)/4",
+    "response-limits" : [0, 16383.75]
+  },
+  "obd-vehicle-speed" : {
+    "group" : "OBD",
+    "label" : "Speed",
+    "description" : "Vehicle Speed",
+    "command" : "010D",
+    "response-type" : "number",
+    "response-units" : "km/h",
+    "response-limits" : [0, 255]
+  },
+  "obd-timing-advance" : {
+    "group" : "ODB",
+    "label" : "Timing Advance",
+    "description" : "Timing Advance",
+    "command" : "010E",
+    "response-type" : "number",
+    "response-units" : "°",
+    "response-formula" : "(A-128)/2",
+    "response-limits" : [-64, 63.5]
+  },
+  "obd-intake-air-temperature" : {
+    "group" : "ODB",
+    "label" : "Intake Temp.",
+    "description" : "Intake Air Temperature",
+    "command" : "010F",
+    "response-type" : "number",
+    "response-units" : "C",
+    "response-formula" : "A-40",
+    "response-limits" : [-40, 215]
+  },
+  "obd-mass-air-flow" : {
+    "group" : "ODB",
+    "label" : "Intake Air Flow",
+    "description" : "Mass Air Flow Rate",
+    "command" : "0110",
+    "response-type" : "packed",
+    "response-units" : "g/s",
+    "response-formula" : "((A*256)+B)/100",
+    "response-limits" : [0, 655.35]
+  },
+  "obd-throttle-position" : {
+    "group" : "ODB",
+    "label" : "Throttle",
+    "description" : "Commanded Throttle Position",
+    "command" : "0111",
+    "response-type" : "number",
+    "response-units" : "%",
+    "response-formula" : "A*100/255",
+    "response-limits" : [0, 100]
+  },
+  "obd-engine-runtime" : {
+    "group" : "ODB",
+    "label" : "Runtime",
+    "description" : "Engine Runtime",
+    "command" : "011F",
+    "response-size" : 2,
+    "response-type" : "packed",
+    "response-units" : "s",
+    "response-formula" : "(A*256)+B",
+    "response-limits" : [0, 65535]
+  },
+  "obd-vehicle-identification-number" : {
+    "group" : "ODB",
+    "label" : "VIN",
+    "description" : "Vehicle Identification Number",
+    "command" : "0902",
+    "response-type" : "string"
+  },
+  "automatic-adapter-identifier" : {
+    "group" : "Automatic",
+    "label" : "Adapter",
+    "description" : "Adapter UUID",
+    "command" : "ALID",
+    "response-type" : "string"
+  },
+  "automatic-firmware-version" : {
+    "group" : "Automatic",
+    "label" : "Version",
+    "description" : "Adapter Firmware Version",
+    "command" : "ALVER",
+    "response-type" : "string"
+  },
+  "automatic-begin-streaming" : {
+    "group" : "Automatic",
+    "description" : "Begin Streaming",
+    "command" : "ALBS"
+  },
+  "automatic-end-streaming" : {
+    "group" : "Automatic",
+    "description" : "End Streaming",
+    "command" : "ALES"
+  },
+  "automatic-efficency-model-set" : {
+    "group" : "Automatic",
+    "description" : "Set the Fuel Efficency for this Vehicle",
+    "command" : "ALMS"
+  },
+  "automatic-trip-odometer" : {
+    "group" : "Automatic",
+    "description" : "Trip Odometer",
+    "command" : "ALTO",
+    "response-type" : "number",
+    "response-units" : "km"
+  },
+  "automatic-fuel-efficiency" : {
+    "group" : "Automatic",
+    "description" : "Instantaneous Fuel Efficency Estimate",
+    "command" : "ALIE",
+    "response-type" : "number",
+    "response-units" : "L/100Km"
+  },
+  "automatic-efficiency-history" : {
+    "group" : "Automatic",
+    "description" : "Historical Fuel Efficency Estimate",
+    "command" : "ALEH",
+    "response-type" : "array",
+    "response-units" : "L/100Km"
+  }
+}
