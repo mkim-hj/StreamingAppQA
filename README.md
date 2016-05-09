@@ -1,4 +1,4 @@
-# automatic-smog
+# Streaming App QA
 
 1. Build frameworks first
 
@@ -6,6 +6,6 @@
   > sudo gem install rake
   > rake bootstrap
 
-2. Open Oregon.xcodeproj
+2. Open Streaming.xcodeproj
 
   > Build and Run!
