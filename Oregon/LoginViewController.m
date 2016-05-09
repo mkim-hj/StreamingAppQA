@@ -110,7 +110,7 @@
     
     [self.view addGestureRecognizer:tap];
 
-    self.client = [[AUTClient alloc] initWithClientID:@"1544288664bb7debe2de" clientSecret:@"9a1da50fa231b8fb077ba575dee0f1b6ac50ec20"];
+    self.client = [[AUTClient alloc] initWithClientID:@"8db4c6db287749f2efbe" clientSecret:@"dc8596e8b8fefd24599e2c18c05241f1e2562607"];
     AppDelegate * delegate = [[UIApplication sharedApplication] delegate];
     delegate.client = self.client;
 }
